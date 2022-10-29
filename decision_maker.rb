@@ -1,4 +1,4 @@
-p "What are the options?"
+p "What are the options? Type STOP to stop"
 options = []
 option = ""
 while option != "STOP"
