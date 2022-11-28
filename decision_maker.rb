@@ -1,3 +1,6 @@
+require TTY
+box = TTY::Box.frame "DECISION MAKER", padding: 3, align: :center
+p box
 p "Enter an option and press Enter. Type STOP when done."
 options = []
 option = ""
