@@ -1,22 +1,35 @@
 require "tty-box"
 
-box = TTY::Box.frame(padding: 3, align: :center, enable_color: true, title: {
+box = TTY::Box.frame(padding: 3, align: :center, enable_color: true, border: :thick, title: {
                        top_left: "DECISION MAKER",
                      },
                      style: {
                        fg: :bright_yellow,
                        bg: :bright_blue,
+                       border: {
+                         bg: :bright_yellow,
+                         fg: :bright_red,
+                       },
 
-                     }) do "Enter an option and press Enter. Type STOP when done." end
+                     }) do "Type an option and press Enter. Type END when done." end
 print box
 options = []
 option = ""
-while option != "STOP"
+while option != "END"
   option = gets.chomp
   options << option
 end
-if option == "STOP"
+if option == "END"
   options.pop
-  box2 = TTY::Box.frame "#{options.sample}", align: :center, title: { top_left: "THIS MACHINE CHOOSES" }
+  box2 = TTY::Box.frame("I think you should do #{options.sample}", align: :center, title: { top_left: "DECISION MAKER" },
+                                                                   style: {
+                                                                     fg: :bright_yellow,
+                                                                     bg: :bright_blue,
+                                                                     border: {
+                                                                       bg: :bright_yellow,
+                                                                       fg: :bright_red,
+                                                                     },
+
+                                                                   })
   print box2
 end
