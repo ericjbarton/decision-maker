@@ -1,6 +1,7 @@
-require TTY
-box = TTY::Box.frame "DECISION MAKER", padding: 3, align: :center
-p box
+require "tty-box"
+
+box = TTY::Box.frame "DECISION MAKER", align: :center
+print box
 p "Enter an option and press Enter. Type STOP when done."
 options = []
 option = ""
@@ -10,5 +11,6 @@ while option != "STOP"
 end
 if option == "STOP"
   options.pop
-  p options.sample
+  box2 = TTY::Box.frame "This machine says #{options.sample}"
+  print box2
 end
