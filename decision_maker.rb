@@ -1,21 +1,14 @@
 require "tty-box"
 
-box = TTY::Box.frame(align: :center, enable_color: true,
+box = TTY::Box.frame(padding: 3, align: :center, enable_color: true, title: {
+                       top_left: "DECISION MAKER",
+                     },
                      style: {
                        fg: :bright_yellow,
                        bg: :bright_blue,
 
-                     }) do "DECISION MAKER" end
+                     }) do "Enter an option and press Enter. Type STOP when done." end
 print box
-box3 = TTY::Box.frame(padding: 3, align: :center, enable_color: true, title: {
-                        top_left: "DECISION MAKER",
-                      },
-                      style: {
-                        fg: :bright_yellow,
-                        bg: :bright_blue,
-
-                      }) do "Enter an option and press Enter. Type STOP when done." end
-print box3
 options = []
 option = ""
 while option != "STOP"
