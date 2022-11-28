@@ -1,4 +1,4 @@
-p "What are the options? Type STOP to stop"
+p "Enter an option and press Enter. Type STOP when done."
 options = []
 option = ""
 while option != "STOP"
