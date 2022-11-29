@@ -1,5 +1,8 @@
 require "tty-box"
+require "tty-font"
 
+font = TTY::Font.new(:standard)
+puts font.write("DECISION MAKER")
 box = TTY::Box.frame(padding: 3, align: :center, enable_color: true, border: :thick, title: {
                        top_left: "DECISION MAKER",
                      },
@@ -33,3 +36,4 @@ if option == "END"
                                                                    })
   print box2
 end
+
