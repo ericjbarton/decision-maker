@@ -21,7 +21,7 @@ while option != "END"
 end
 if option == "END"
   options.pop
-  box2 = TTY::Box.frame("I think you should do #{options.sample}", align: :center, title: { top_left: "DECISION MAKER" },
+  box2 = TTY::Box.frame("Go with #{options.sample}, you won't regret it.", align: :center, title: { top_left: "DECISION MAKER" },
                                                                    style: {
                                                                      fg: :bright_yellow,
                                                                      bg: :bright_blue,
